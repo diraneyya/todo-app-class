@@ -18,6 +18,9 @@
 
         function clickHandler(event) {
             const thisItem = event.currentTarget;
+
+            // hide the element using CSS display
+            thisItem.style.display = "none";
         }
 
         nodeItem.onclick = clickHandler;
