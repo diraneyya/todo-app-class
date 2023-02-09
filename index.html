@@ -19,8 +19,8 @@
         function clickHandler(event) {
             const thisItem = event.currentTarget;
 
-            // hide the element using CSS display
-            thisItem.style.display = "none";
+            // actually remove the node from the DOM
+            thisItem.remove();
         }
 
         nodeItem.onclick = clickHandler;
