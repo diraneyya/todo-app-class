@@ -17,10 +17,10 @@
         const nodeItem = document.querySelector("li");
 
         function clickHandler(event) {
-            // logs the target property of the event object
-            // in the console.
+            // logs the target and the currentTarget properties
+            // of the event object in the console.
             console.log("event.target:", event.target);
-            
+            console.log("event.currentTarget:", event.currentTarget);
         }
 
         nodeItem.onclick = clickHandler;
