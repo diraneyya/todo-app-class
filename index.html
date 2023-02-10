@@ -46,10 +46,7 @@
             
             // show the placeholder if the list is empty only
             // and hide it otherwise
-            if (isEmpty)
-                toggleEmptyItem(true);
-            else
-                toggleEmptyItem(false);
+            toggleEmptyItem(isEmpty);
         }
 
         // this is the click handler for actual todo items
