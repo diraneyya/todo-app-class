@@ -7,23 +7,22 @@
     <title>To-do application</title>
 </head>
 <body>
-    <ul>
-        <li><em>Lorem</em> ipsum <strong>dolor</strong> sit <abbr title="amet.">amet.</abbr></li>
-        <li>Error quasi sunt iure voluptatibus!</li>
-        <li>Fugiat non error temporibus quidem?</li>
+    <ul id="todo">
+        <li id="empty"><em>No todos added to the list</em></li>
     </ul>
 
     <script>
-        const nodeItem = document.querySelector("li");
+        // this is the constant storing the DOM node for the
+        // todo item placeholder when empty
+        const nodeEmpty = document.querySelector("li#empty");
 
+        // this is the click handler for actual todo items
         function clickHandler(event) {
             const thisItem = event.currentTarget;
 
             // actually remove the node from the DOM
             thisItem.remove();
         }
-
-        nodeItem.onclick = clickHandler;
     </script>
 </body>
 </html>
