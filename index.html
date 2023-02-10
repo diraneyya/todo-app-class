@@ -18,6 +18,13 @@
         // represented by the <ul> element in HTML
         const nodeTodoList = document.querySelector("ul#todo");
 
+        // this is a global variable whose purpose is to detect
+        // when any todos were removed by clicking on them
+        // during the lifecycle of the application (currently
+        // this is the time from the loading of the page until
+        // it is reloaded again)
+        let wereTodosRemoved = false; 
+
         // show-hide the empty placeholder item
         function toggleEmptyItem(visible) {
             // this is the constant storing the DOM node for 
@@ -55,6 +62,9 @@
 
             // actually remove the node from the DOM
             thisItem.remove();
+
+            // indicate that at least a single todo was removed 
+            wereTodosRemoved = true;
 
             // show/hide placeholder as necessary
             updateEmptyItem();
