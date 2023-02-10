@@ -28,19 +28,36 @@
                 visible ? "list-item" : "none";
         }
 
+        // this function is supposed to "smartly" show or
+        // hide the placeholder, depending on whether the list
+        // todos is empty or not. This is needed when a first
+        // todo item is added to the list, and when a last
+        // todo item is removed.
+        function updateEmptyItem() {
+            // in the current implementation, it does it right
+            // only when the first todo item is added
+            toggleEmptyItem(false);
+        }
+
         // this is the click handler for actual todo items
         function itemClickHandler(event) {
             const thisItem = event.currentTarget;
 
             // actually remove the node from the DOM
             thisItem.remove();
+
+            // show/hide placeholder as necessary
+            updateEmptyItem();
         }
 
         function buttonClickHandler() {
             const nodeTextInput = document.querySelector("input#text");
 
             // add todo
-            addTodo(nodeTextInput.value)
+            addTodo(nodeTextInput.value);
+
+            // show/hide placeholder as necessary
+            updateEmptyItem();
         }
 
         // adds a todo list
