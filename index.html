@@ -38,9 +38,18 @@
         // todo item is added to the list, and when a last
         // todo item is removed.
         function updateEmptyItem() {
-            // in the current implementation, it does it right
-            // only when the first todo item is added
-            toggleEmptyItem(false);
+            // check if the list is currently actually empty
+            // note that since the empty placeholder item is
+            // never removed, only hidden, we expect a child-
+            // ren count in this instance of "1"
+            const isEmpty = nodeTodoList.children.length === 1;
+            
+            // show the placeholder if the list is empty only
+            // and hide it otherwise
+            if (isEmpty)
+                toggleEmptyItem(true);
+            else
+                toggleEmptyItem(false);
         }
 
         // this is the click handler for actual todo items
