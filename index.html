@@ -29,7 +29,7 @@
         }
 
         // this is the click handler for actual todo items
-        function clickHandler(event) {
+        function itemClickHandler(event) {
             const thisItem = event.currentTarget;
 
             // actually remove the node from the DOM
@@ -39,7 +39,7 @@
         // adds a todo list
         function addTodo(text) {
             nodeTodoList.innerHTML += `
-                <li onclick="clickHandler(event)">${text}</li>`;
+                <li onclick="itemClickHandler(event)">${text}</li>`;
         }
     </script>
 </body>
