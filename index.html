@@ -18,12 +18,16 @@
         // represented by the <ul> element in HTML
         const nodeTodoList = document.querySelector("ul#todo");
 
-        // this is the constant storing the DOM node for the
-        // todo item placeholder when empty
-        const nodeEmpty = document.querySelector("li#empty");
-
         // show-hide the empty placeholder item
         function toggleEmptyItem(visible) {
+            // this is the constant storing the DOM node for 
+            // the todo item placeholder when empty
+            // note: since we are rewriting the innerHTML of
+            //       of the <ul> DOM element in the addTodo
+            //       function, we cannot define this as a
+            //       global constant anymore (why?) 
+            const nodeEmpty = document.querySelector("li#empty");
+
             nodeEmpty.style.display = 
                 visible ? "list-item" : "none";
         }
