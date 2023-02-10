@@ -7,7 +7,7 @@
     <title>To-do application</title>
 </head>
 <body>
-    <input type="text" placeholder="todo description here">
+    <input id="text" type="text" placeholder="todo description here">
     <input type="button" value="add todo" onclick="buttonClickHandler()">
     <ul id="todo">
         <li id="empty"><em>No todos added to the list</em></li>
@@ -37,7 +37,10 @@
         }
 
         function buttonClickHandler() {
-            // empty function
+            const nodeTextInput = document.querySelector("input#text");
+
+            // log the text to the console
+            console.log(nodeTextInput.value)
         }
 
         // adds a todo list
