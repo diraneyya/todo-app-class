@@ -33,6 +33,11 @@
             // actually remove the node from the DOM
             thisItem.remove();
         }
+
+        // adds a todo list
+        function addTodo(text) {
+            nodeTodoList.innerHTML += `<li>${text}</li>`;
+        }
     </script>
 </body>
 </html>
