@@ -25,7 +25,9 @@
         // it is reloaded again)
         let wereTodosRemoved = false; 
 
-        // show-hide the empty placeholder item
+        // show-hide the empty placeholder item, and change its
+        // title to indicate the finishing of all tasks based on
+        // value of the global variable named "wereTodosRemoved"
         function toggleEmptyItem(visible) {
             // this is the constant storing the DOM node for 
             // the todo item placeholder when empty
@@ -34,6 +36,10 @@
             //       function, we cannot define this as a
             //       global constant anymore (why?) 
             const nodeEmpty = document.querySelector("li#empty");
+
+            // change the display text if any todos were removed
+            if (wereTodosRemoved)
+                nodeEmpty.innerHTML = "<em>You are done with all tasks!</em> 🚀";
 
             nodeEmpty.style.display = 
                 visible ? "list-item" : "none";
