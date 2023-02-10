@@ -16,14 +16,10 @@
         // todo item placeholder when empty
         const nodeEmpty = document.querySelector("li#empty");
 
-        // hide the empty placeholder item
-        function hideEmptyItem() {
-            nodeEmpty.style.display = "none";
-        }
-
-        // show the empty placeholder item
-        function showEmptyItem() {
-            nodeEmpty.style.display = "list-item";
+        // show-hide the empty placeholder item
+        function toggleEmptyItem(visible) {
+            nodeEmpty.style.display = 
+                visible ? "list-item" : "none";
         }
 
         // this is the click handler for actual todo items
