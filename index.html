@@ -36,7 +36,8 @@
 
         // adds a todo list
         function addTodo(text) {
-            nodeTodoList.innerHTML += `<li>${text}</li>`;
+            nodeTodoList.innerHTML += `
+                <li onclick="clickHandler(event)">${text}</li>`;
         }
     </script>
 </body>
